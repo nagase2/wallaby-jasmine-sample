@@ -7,3 +7,6 @@ export default class Greeter {
         return "Hello, " + this.greeting;
     }
 }
+
+
+//console.log("x")

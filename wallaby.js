@@ -2,11 +2,19 @@ module.exports = function (w) {
 
   return {
     files: [
-      'src/*Browser.ts'
+      'src/*Node.ts'
     ],
 
     tests: [
-      'test/*BrowserSpec.ts'
-    ]
+      'test/**/*spec.ts'
+    ],
+
+    env: {
+      type: 'node'
+    },
+
+    // or any other supported testing framework:
+    // https://wallabyjs.com/docs/integration/overview.html#supported-testing-frameworks
+    testFramework: 'jasmine'
   };
 };
