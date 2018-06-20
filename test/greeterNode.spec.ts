@@ -17,12 +17,8 @@ describe('Sayings Greeter', () => {
 
         expect(true).toBeTruthy();
     });
-    it('should greet', () => {
-        var greeter = new Greeter('John');
-        console.log(greeter.greet());
 
-        expect(false).toBeTruthy();
-    });
+    
     it('テスト', () => {
         console.log("あああああああ")
         console.log("いいいい")
