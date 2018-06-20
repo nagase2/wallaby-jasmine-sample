@@ -2,7 +2,7 @@ module.exports = function (w) {
 
   return {
     files: [
-      'src/*Node.ts'
+      'src/**/*.ts'
     ],
 
     tests: [
