@@ -4,7 +4,7 @@ import {Human, Animal} from "./HumanInterface"
 export class Person  implements Human{    
     gendar: string;
     id: number;
-    name: string;
+    _name: string;
     age: number;
     speacies: string;
     setTime(d: Date) {
@@ -19,11 +19,14 @@ export class Person  implements Human{
     setGendar(g: string) {
         this.gendar = g;
     }
+    get name():string{
+        return this._name + "...";
+    }
     numberOfLegs: number;
     numberOfHands: number;
-    constructor(_id: number, _name: string) {
+    constructor(_id: number, name: string) {
         this.id = _id;
-        this.name = _name;
+        this._name = name;
         this.age = 99;      
     }
     
@@ -31,5 +34,23 @@ export class Person  implements Human{
 
         return this.age + durationByYear;
     } 
+    public getPromise():Promise<string>{
+        return  new Promise<string>((resolve, reject) => { 
+            console.log("wait has began")
+            setTimeout(() => {
+                resolve('a string'); 
+            }, 5000);
+       
+        });
+    
+    }
 }
+
+async function main() {
+
+    let person = new Person(123,'nagase');
+    console.log(person.name)
+    console.log(await person.getPromise())
+}
+main();
 
